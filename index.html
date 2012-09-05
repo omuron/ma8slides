@@ -29,14 +29,14 @@
         <script type="text/javascript">
             callback = function(res) {
                 var i = res.key;
-                var css = document.getElementById('linejp_css');
+                var css = document.getElementById('target_css');
                 var jv = '';
 
                 if (!css) {
                     css = document.createElement('style');
                     css.setAttribute('type', 'text/css');
                     css.setAttribute('rel', 'stylesheet');
-                    css.setAttribute('id', 'linejp_css');
+                    css.setAttribute('id', 'target_css');
                     document.getElementsByTagName('head')[0].appendChild(css);
                 }
 
@@ -44,12 +44,10 @@
                     jv = res.data;
                 }
                 $(css).html(jv);
-                console.log(res.type + ': とりま');
 
                 if (res.code == 0) {
-                    $("#linejp").css('visibility', 'visible');
+                    $("#target").css('visibility', 'visible');
                 }
-                console.log(res.code + ': あいう');
             }
             TypeSquare.onComplete(callback);
         </script>
@@ -188,7 +186,7 @@
                         </p>
                         <p>　</p>
                         <p class="fr">コールバックなし（通常）</p>
-                        <p id="linejp" class="fr" style="visibility: hidden;">コールバックあり</p>
+                        <p id="target" class="fr" style="visibility: hidden;">コールバックあり</p>
                     </section>
                     <section>
                         <h2>非同期呼び出し</h2>
