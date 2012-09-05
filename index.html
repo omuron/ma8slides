@@ -27,16 +27,16 @@
         </script>
         
         <script type="text/javascript">
-            callback = function(res) {
+            callback1 = function(res) {
                 var i = res.key;
-                var css = document.getElementById('target_css');
+                var css = document.getElementById('callback_css');
                 var jv = '';
 
                 if (!css) {
                     css = document.createElement('style');
                     css.setAttribute('type', 'text/css');
                     css.setAttribute('rel', 'stylesheet');
-                    css.setAttribute('id', 'target_css');
+                    css.setAttribute('id', 'callback_css');
                     document.getElementsByTagName('head')[0].appendChild(css);
                 }
 
@@ -46,10 +46,34 @@
                 $(css).html(jv);
 
                 if (res.code == 0) {
-                    $("#target").css('visibility', 'visible');
+                    $("#callback").css('visibility', 'visible');
                 }
             }
-            TypeSquare.onComplete(callback);
+            TypeSquare.onComplete(callback1);
+            
+            callback2 = function(res) {
+                var i = res.key;
+                var css = document.getElementById('dynamic_css');
+                var jv = '';
+
+                if (!css) {
+                    css = document.createElement('style');
+                    css.setAttribute('type', 'text/css');
+                    css.setAttribute('rel', 'stylesheet');
+                    css.setAttribute('id', 'callback_css');
+                    document.getElementsByTagName('head')[0].appendChild(css);
+                }
+
+                if (res.type == 'css') {
+                    jv = res.data;
+                }
+                $(css).html(jv);
+
+                if (res.code == 0) {
+                    $("#dynamic").css('visibility', 'visible');
+                }
+            }
+            TypeSquare.onComplete(callback2);
         </script>
 
         <!--[if lt IE 9]>
@@ -186,7 +210,7 @@
                         </p>
                         <p>　</p>
                         <p class="fr">コールバックなし（通常）</p>
-                        <p id="target" class="fr" style="visibility: hidden;">コールバックあり</p>
+                        <p id="callback" class="fr" style="visibility: hidden;">コールバックあり</p>
                     </section>
                     <section>
                         <h2>非同期呼び出し</h2>
@@ -196,7 +220,7 @@
                         </p>
                         <p>　</p>
                         <p class="momo">同期呼び出し（通常）</p>
-                        <textarea id="area" >あいうえお</textarea><button onclick="" value="test"></button>
+                        <input id="dynamic" type="text" placeholder="非同期呼び出し" /><button onclick="TypeSquare.dynamicCss(callback2, $('#dynamic')[0].value, 'Ryumin Regular', 'dynamic_font', '');">test</button>
                     </section>
                 </section>
                 
