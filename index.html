@@ -25,15 +25,7 @@
             document.write('<link rel="stylesheet" href="css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
         </script>
         
-
-        <!--[if lt IE 9]>
-        <script src="lib/js/html5shiv.js"></script>
-        <![endif]-->
-    </head>
-
-    <body>
-
-        <script type="teext/javascript">
+        <script type="text/javascript">
             callback = function(res) {
                 console.log(res.type + ': ははは');
                 var i = res.key;
@@ -61,6 +53,13 @@
             }
             TypeSquare.onComplete(callback);
         </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
         <div class="reveal">
 
             <!-- Used to fade in a background when a specific slide state is reached -->
