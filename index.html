@@ -45,6 +45,7 @@
                 }
                 $(css).html(jv);
 
+                    console.log('ok1');
                 if (res.code == 0) {
                     $("#callback").css('visibility', 'visible');
                 }
@@ -68,6 +69,7 @@
                     jv = res.data;
                 }
                 $(css).html(jv);
+                    console.log('ok2');
             }
             TypeSquare.onComplete(callback2);
             
