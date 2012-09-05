@@ -74,6 +74,11 @@
                 }
             }
             TypeSquare.onComplete(callback2);
+            
+            dynamicRequest = function() {
+                $('#dynamic').css('fontFamily', 'dynamic_font');
+                TypeSquare.dynamicCss(callback2, $('#dynamic')[0].value, 'Ryumin Regular', 'dynamic_font', '');
+            }
         </script>
 
         <!--[if lt IE 9]>
@@ -220,7 +225,7 @@
                         </p>
                         <p>　</p>
                         <p class="momo">同期呼び出し（通常）</p>
-                        <input id="dynamic" type="text" placeholder="非同期呼び出し" /><button onclick="TypeSquare.dynamicCss(callback2, $('#dynamic')[0].value, 'Ryumin Regular', 'dynamic_font', '');">test</button>
+                        <input id="dynamic" type="text" placeholder="非同期呼び出し" /><button onclick="dynamicRequest();">test</button>
                     </section>
                 </section>
                 
