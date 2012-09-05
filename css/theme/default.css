@@ -142,17 +142,21 @@ body {
 }
 
 .reiminr {
-	font-family: 'Reimin Regular';
+    font-family: 'Reimin Regular';
 }
 
 .sgr {
-	font-family: 'Shin Go Regular';
+    font-family: 'Shin Go Regular';
 }
 
 .cbsk1 {
-	font-family: 'Shinsei Kaisho CBSK1';
+    font-family: 'Shinsei Kaisho CBSK1';
 }
 
 .momo {
-	font-family: 'Pretty Momo';
+    font-family: 'Pretty Momo';
+}
+
+.fr {
+    font-family: 'Folk Regular';
 }
