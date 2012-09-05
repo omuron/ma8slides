@@ -45,13 +45,13 @@
                 }
                 $(css).html(jv);
 
-                    console.log('ok1');
+                console.log('ok1');
                 if (res.code == 0) {
                     $("#callback").css('visibility', 'visible');
                 }
             }
             TypeSquare.onComplete(callback1);
-            
+
             callback2 = function(res) {
                 var i = res.key;
                 var css = document.getElementById('dynamic_css');
@@ -69,11 +69,10 @@
                     jv = res.data;
                 }
                 $(css).html(jv);
-                    console.log('ok2');
+                console.log('ok2');
             }
-            TypeSquare.onComplete(callback2);
-            
             dynamicRequest = function() {
+                TypeSquare.onComplete(callback2);
                 $('#dynamic').css('fontFamily', 'dynamic_font');
                 TypeSquare.dynamicCss(callback2, $('#dynamic')[0].value, 'Ryumin Regular', 'dynamic_font', '');
             }
