@@ -24,6 +24,33 @@
             // If the query includes 'print-pdf' we'll use the PDF print sheet
             document.write('<link rel="stylesheet" href="css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
         </script>
+        
+        <script type="teext/javascript">
+            callback = function(res) {
+                var i = res.key;
+                var css = document.getElementById('linejp_css');
+                var jv = '';
+
+                if (!css) {
+                    css = document.createElement('style');
+                    css.setAttribute('type', 'text/css');
+                    css.setAttribute('rel', 'stylesheet');
+                    css.setAttribute('id', 'linejp_css');
+                    document.getElementsByTagName('head')[0].appendChild(css);
+                }
+
+                if (res.type == 'css') {
+                    jv = res.data;
+                }
+                $(css).html(jv);
+                console.log(res.type + ': とりま');
+
+                if (res.code == 0) {
+                    $("p").css('visibility', 'visible');
+                }
+            }
+            TypeSquare.onComplete(callback);
+        </script>
 
         <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
@@ -109,22 +136,13 @@
                     <p class="mfb">
                         指定したフォントがウェブで使える。<br>
                         なので環境によらず同じフォントが使える。<br>
-                        なのでブランドイメージなどを統一できる。
+                        なのでブランドイメージなどを統一できる。<br>
+                        欧米ではかなり使われ始めている。
                     </p>
 
                     <aside class="notes">
+                        基本的にはフォントデータをまるごとブラウザにダウンロード。
                         サイトイメージの統一。
-                    </aside>
-                </section>
-                
-                <section>
-                    <h2 style="font-family: 'Shin Maru Go Emboss';">Webフォントって？</h2>
-                    <p>　</p>
-                    <p class="mfb">
-                        アメリカ，ヨーロッパでは急激に使われ始めている。
-                    </p>
-
-                    <aside class="notes">
                         NYTimes, Ford。それ以外にもGoogle Docsで使えるようになってたり，Creative Cloudで使えるようになってたり。
                     </aside>
                 </section>
@@ -169,7 +187,7 @@
                         </p>
                         <p>　</p>
                         <p class="fr">コールバックなし（通常）</p>
-                        <p>コールバックあり</p>
+                        <p id="linejp">コールバックあり</p>
                     </section>
                     <section>
                         <h2>非同期呼び出し</h2>
