@@ -27,6 +27,7 @@
         
         <script type="teext/javascript">
             callback = function(res) {
+                console.log(res.type + ': ははは');
                 var i = res.key;
                 var css = document.getElementById('linejp_css');
                 var jv = '';
@@ -48,6 +49,7 @@
                 if (res.code == 0) {
                     $("p").css('visibility', 'visible');
                 }
+                console.log(res.code + ': あいう');
             }
             TypeSquare.onComplete(callback);
         </script>
