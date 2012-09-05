@@ -93,7 +93,7 @@ body {
  *********************************************/
 
 .reveal .slides section {
-    line-height: 1.2em;
+    line-height: 1.5em;
     font-weight: normal;
 }
 
@@ -140,7 +140,7 @@ body {
 
 .reveal p {
     margin-bottom: 10px;
-    line-height: 1.2em;
+    line-height: 1.5em;
 }
 
 .reveal q, .reveal blockquote {
