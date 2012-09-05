@@ -47,7 +47,7 @@
                 console.log(res.type + ': とりま');
 
                 if (res.code == 0) {
-                    $("p").css('visibility', 'visible');
+                    $("#linejp").css('visibility', 'visible');
                 }
                 console.log(res.code + ': あいう');
             }
@@ -189,7 +189,7 @@
                         </p>
                         <p>　</p>
                         <p class="fr">コールバックなし（通常）</p>
-                        <p id="linejp" class="fr">コールバックあり</p>
+                        <p id="linejp" class="fr" style="visibility: hidden;">コールバックあり</p>
                     </section>
                     <section>
                         <h2>非同期呼び出し</h2>
