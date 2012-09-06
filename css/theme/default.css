@@ -161,6 +161,10 @@ body {
     font-family: 'Folk Regular';
 }
 
+.udsgr {
+    font-family: 'UD Shin Go Regular';
+}
+
 #callback {
     visibility: hidden;
 }
