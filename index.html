@@ -179,9 +179,7 @@
                     </p>
 
                     <aside class="notes">
-                        基本的にはフォントデータをまるごとブラウザにダウンロード。
-                        サイトイメージの統一。
-                        NYTimes, Ford。それ以外にもGoogle Docsで使えるようになってたり，Creative Cloudで使えるようになってたり。
+                        使用する文字を検索している。
                     </aside>
                 </section>
                 
@@ -204,15 +202,9 @@
                         <p>　</p>
                         
                         <ul class="fr">
-                            <li>
-                                通常配信
-                            </li>
-                            <li>
-                                ダウンロードコールバック
-                            </li>
-                            <li>
-                                非同期呼び出し
-                            </li>
+                            <li>通常配信</li>
+                            <li>ダウンロードコールバック</li>
+                            <li>非同期呼び出し</li>
                         </ul>
     
                         <aside class="notes">
@@ -228,7 +220,7 @@
                         </p>
                         <p>　</p>
                         <p class="fr">コールバックなし（通常）</p>
-                        <p id="callback" class="fr" style="visibility: hidden;">コールバックあり</p>
+                        <p id="callback" class="fr" style="visibility: hidden; color: lightgreen;">コールバックあり</p>
                     </section>
                     <section>
                         <h2>非同期呼び出し</h2>
@@ -238,7 +230,7 @@
                         </p>
                         <p>　</p>
                         <p class="momo">同期呼び出し（通常）</p>
-                        <input id="dynamic" type="text" placeholder="非同期呼び出し" value="非同期呼び出し" /><button type="button" class="btn" onclick="dynamicRequest();">適用</button>
+                        <input id="dynamic" type="text" placeholder="非同期呼び出し" value="非同期呼び出し" style="color: blue;" /><button type="button" class="btn" onclick="dynamicRequest();">適用</button>
                     </section>
                 </section>
                 
