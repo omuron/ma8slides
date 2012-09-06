@@ -45,7 +45,6 @@
                 }
                 $(css).html(jv);
 
-                console.log('ok1');
                 if (res.code == 0) {
                     $("#callback").css('visibility', 'visible');
                 }
@@ -69,7 +68,6 @@
                     jv = res.data;
                 }
                 $(css).html(jv);
-                console.log('ok2');
             }
             dynamicRequest = function() {
                 TypeSquare.onComplete(callback2);
@@ -235,6 +233,17 @@
 
                     <aside class="notes">
                         利用開始できるまで1日弱かかります。
+                    </aside>
+                </section>
+                <section>
+                    <h2 style="font-family: 'Shin Maru Go Emboss';">最新情報はこちら</h2>
+                    <p>　</p>
+                    <p class="mfb">
+                        <a href="http://twitter.com/typesquare" target="_blank">@typesquare</a>
+                    </p>
+
+                    <aside class="notes">
+                        リファレンス公開などを発信
                     </aside>
                 </section>
 
