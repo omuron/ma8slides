@@ -4,14 +4,14 @@
     <head>
         <meta charset="utf-8">
 
-        <title>TypeSquare in MA8</title>
+        <title>TypeSquare</title>
 
         <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-        <meta name="author" content="kanzmrsw">
+        <meta name="author" content="takaomuro">
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <script type="text/javascript" src="http://distapi.typesquare.com/accessor/script/typesquare.js?oCDPlT84HS8%3D" charset="utf-8"></script>
+	<script type="text/javascript" src="http://typesquare.com/accessor/script/typesquare-api.js?AiqNh1PbzW0%3D" charset="utf-8"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
@@ -21,6 +21,14 @@
 
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<style>
+	.box-shadow{
+		inset 0 2px 5px rgba(255,255,255,0.6),
+		inset 0 -2px 5px rgba(0,0,0,0.6),
+		0 5px 5px rgba(0,0,0,0.8);
+	}
+	</style>
 
         <script>
             // If the query includes 'print-pdf' we'll use the PDF print sheet
@@ -93,72 +101,56 @@
                 <section>
                     <h1>Introduction</h1>
                     <h1>to</h1>
-                    <h1>TypeSquare APIs</h1>
+                    <h1>TypeSquare</h1>
                     <br>
-                    <h3>Kouji Anzai, Morisawa Inc.</h3>
+                    <h3>Takafumi Omuro, Morisawa Inc.</h3>
                 </section>
 
-                <section>
-                    <h2>お知らせ</h2>
-                    <p>　</p>
-                    <p class="mfb">
-                        このMeetup，セッションのハッシュタグ。
-                    </p>
-                    <p class="fr">#MA8</p>
-                    <p class="fr">#typesquare</p>
-
-                    <aside class="notes">
-                        たくさん呟いてくれたら伴野さんが喜びます。
-                    </aside>
-                </section>
                 <section>
                     <h2>はじめに</h2>
                     <p>　</p>
                     <p class="mfb">
-                        株式会社モリサワは，フォントや組版ソフトを
-                        <br>
-                        開発，販売している会社です。
+                        株式会社モリサワは，フォントや組版ソフトを<br>
+                        開発，販売している会社です。<br>
+			<br>
+			<!--
+			2012年2月よりウェブフォントサービス<br>
+			<a href="http://typesquare.com/" target="_blank">TypeSquare</a>開始<br>
+			-->
                     </p>
                     <p>
                         <i><small>- <a href="http://www.morisawa.co.jp/" target="_blank">www.morisawa.co.jp</a></small></i>
                     </p>
-
-                    <aside class="notes">
-                        知らない人が殆どだと思うので，モリサワを簡潔に紹介。開発イベントなので，商品の説明などはなし。
-                    </aside>
                 </section>
-                
+
                 <section>
                     <h2>自己紹介</h2>
                     <p>　</p>
                     <p class="mfb">
-                        案西稿志（あんざいこうじ）マーケティング部
+                        小室貴史（おむろたかふみ）フォント開発部
                     </p>
                     <ul class="fr">
-                        <li>大学では数学やってました。</li>
-                        <li>5年前に入社。フィーチャーフォン，Androidケータイ用フォント開発。</li>
-                        <li>3年前くらいからぼちぼちウェブフォント。去年くらいから本格化。</li>
+                        <li>ラスタライザ開発</li>
+			<li>フィーチャーフォン描画エンジン開発</li>
+			<li>Androidフォントのフォント組込み</li>
+			<li>Android電子書籍ビューア開発</li>
+                        <li>ウェブフォント, TypeSquare開発</li>
                     </ul>
-
-                    <aside class="notes">
-                        プログラミングしたことなかった。
-                    </aside>
                 </section>
                 
                 <section>
                     <h2 style="font-family: 'Shin Maru Go Emboss';">TYPESQUARE</h2>
                     <p>　</p>
                     <p class="mfb">
-                        2月からクラウドフォントサービス「TypeSquare」をはじめました。<br>
-                        現在は通常の配信のみです。
+                        2012年2月からクラウドフォントサービス「TypeSquare」をはじめました。<br>
+			<!--
+			ただいまTypeSquareを無料でお好きなだけお使いいただける「￥0キャンペーン」を実施中です。<br>
+			<del>2012年</del> 2013年いっぱい無料です！<br>
+			-->
                     </p>
                     <p>
                         <i><small>- <a href="http://typesquare.com/" target="_blank">typesquare.com</a></small></i>
                     </p>
-
-                    <aside class="notes">
-                        「クラウドフォントサービス」
-                    </aside>
                 </section>
 
                 <section>
@@ -167,12 +159,15 @@
                     <p class="mfb">
                         <ul class="fr">
                             <li>指定したフォントがウェブで使える。</li>
-                            <li>なので環境によらず同じフォントが使える。</li>
-                            <li>なのでブランドイメージなどを統一できる。</li>
-                            <li>欧米ではかなり使われ始めている。</li>
+			    <br>
+			    <li>環境によらず同じフォントが使える。<br>
+			    文字化け, 文字ズレが無くなる</li>
+			    <br>
+			    <li>欧米ではかなり使われ始めている。<br>
+			    New York Times, Ford などなど</li>
+			    
                         </ul>
                     </p>
-
                     <aside class="notes">
                         基本的にはフォントをまるごとブラウザにダウンロード。
                         サイトイメージの統一。
@@ -209,9 +204,8 @@
                     <p class="fragment fr">
                         <small>　　　　などなど</small>
                     </p>
-
                     <aside class="notes">
-                        現在200書体弱使えます。
+                        現在280書体弱使えます。
                     </aside>
                 </section>
                 
@@ -220,15 +214,14 @@
                     <p>　</p>
                     <span class="fragment reiminr" style="font-size: 100px;">永</span>
                     <span class="fragment sgr" style="font-size: 100px;">永</span>
-                    <span class="fragment udsgr" style="font-size: 100px;">永</span><br>
+		    <span class="fragment udsgr" style="font-size: 100px;">永</span><br><br>
                     <span class="fragment cbsk1" style="font-size: 100px;">永</span>
                     <span class="fragment momo" style="font-size: 100px;">永</span>
                     <p class="fragment fr">
-                        <small>　　　　200書体程度</small>
+                        <small><br>　　　　280書体程度</small>
                     </p>
-
                     <aside class="notes">
-                        現在200書体弱使えます。
+                        現在280書体弱使えます。
                     </aside>
                 </section>
                 
@@ -236,14 +229,12 @@
                     <h2 style="font-family: 'Shin Maru Go Emboss';">こんなサイトがあるよ</h2>
                     <p>　</p>
                     <ul class="fr">
-                        <li><a href="http://demo.tikeda.net/webfont/" target="_blank">池田さんのデモ</a></li>
-                        <li><a href="http://heteml.jp/campaign/morisawa/inuseal/" target="_blank">犬ジェネレータ</a></li>
+                        <li><a href="http://typesquare.com/example/" target="_blank">TypeSquare導入事例</a></li>
                         <li><a href="http://typesquare.com/simulator/" target="_blank">クラウドフォント・シミュレータ</a></li>
+                        <li><a href="http://blog.keiji.io/2013/05/typesquare.html" target="_blank">めがねをかけるんだ</a></li>
+                        <li><a href="http://komugi.net/archives/2012/02/23120135" target="_blank">コムギドットネット</a></li>
                     </ul>
-
                     <aside class="notes">
-                        4月に行ったcookpadの池田さんの作成されたデモ。
-                        ペパボ犬ジェネレータ。
                         TypeSquare.com内のシミュレータ。
                     </aside>
                 </section>
@@ -258,7 +249,7 @@
                             <li>非同期呼び出し</li>
                         </ul>
                         <p>　</p>
-                        <p class="fr">↓下へ↓</p>
+			<p class="fr"><div class="box-shadow">↓下へ↓</div></p>
     
                         <aside class="notes">
                             他にもぱらぱらとありますが，大きなものはこの二つ。組み合わせて使う。
@@ -292,35 +283,19 @@
                         </aside>
                     </section>
                 </section>
-                
-                <section>
-                    <h2 style="font-family: 'Shin Maru Go Emboss';">APIユーザ登録</h2>
-                    <p>　</p>
-                    <p class="mfb">
-                        <a href="mailto:kanzai@morisawa.co.jp?subject=[MA8] TypeSquare API reqest" target="_blank">kanzai@morisawa.co.jp</a> へご一報ください。
-                        <ul class="fr">
-                            <li>名前</li>
-                            <li>会社名/団体名</li>
-                            <li>電話番号</li>
-                            <li>登録するドメイン（2つまで）</li>
-                            <li>考えている用途</li>
-                        </ul>
-                    </p>
 
-                    <aside class="notes">
-                        利用開始できるまで1日弱かかります。
-                    </aside>
-                </section>
                 <section>
                     <h2 style="font-family: 'Shin Maru Go Emboss';">最新情報はこちら</h2>
                     <p>　</p>
                     <p class="mfb">
                         <a href="http://twitter.com/typesquare" target="_blank">@typesquare</a>
                         <ul class="fr">
-                            <li><a href="http://distapi.typesquare.com/api_reference/" target="_blank">APIリファレンス</a></li>
+                            <li><a href="http://typesquare.com/api_reference/" target="_blank">APIリファレンス</a></li>
                             <li><a href="./fontlist.html" target="_blank">フォント一覧</a></li>
-                            <li><a href="http://github.com/kanzmrsw/ma8slides/" target="_blank">このプレゼンのソース</a></li>
+                            <li><a href="http://github.com/omuron/ma8slides/" target="_blank">このプレゼンのソース</a></li>
+			    <!--
                             <li><a href="https://github.com/kanzmrsw/TS4ASample" target="_blank">Androidでのサンプルソース</a></li>
+			    -->
                         </ul>
                     </p>
 
@@ -331,7 +306,7 @@
                 </section>
                 <section>
                     <h1>THE END</h1>
-                    <h3>BY Kouji Anzai, Morisawa Inc.</h3>
+                    <h3>BY Takafumi Omuro, Morisawa Inc.</h3>
                 </section>
             </div>
 
