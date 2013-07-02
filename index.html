@@ -11,7 +11,7 @@
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-	<script type="text/javascript" src="http://typesquare.com/accessor/script/typesquare-api.js?AiqNh1PbzW0%3D" charset="utf-8"></script>
+	<script type="text/javascript" src="http://typesquare.com/accessor/apiscript/typesquare.js?AiqNh1PbzW0%3D" charset="utf-8"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
@@ -58,7 +58,7 @@
                     $("#callback").css('visibility', 'visible');
                 }
             }
-            TypeSquare.onComplete(callback1);
+            Ts.onComplete(callback1);
 
             callback2 = function(res) {
                 var i = res.key;
@@ -79,9 +79,9 @@
                 $(css).html(jv);
             }
             dynamicRequest = function() {
-                TypeSquare.onComplete(callback2);
+                Ts.onComplete(callback2);
                 $('#dynamic').css('fontFamily', 'dynamic_font');
-                TypeSquare.dynamicCss(callback2, $('#dynamic')[0].value, 'Kumoyaji', 'dynamic_font', '');
+                Ts.dynamicCss(callback2, $('#dynamic')[0].value, 'Kumoyaji', 'dynamic_font', '');
             }
         </script>
 
@@ -132,8 +132,8 @@
                     <ul class="fr">
                         <li>ラスタライザ開発</li>
 			<li>フィーチャーフォン描画エンジン開発</li>
-			<li>Androidフォントのフォント組込み</li>
-			<li>Android電子書籍ビューア開発</li>
+			<li>Android OSへフォント組込み</li>
+			<li>Android 電子書籍ビューア開発</li>
                         <li>ウェブフォント, TypeSquare開発</li>
                     </ul>
                 </section>
